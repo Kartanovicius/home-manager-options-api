@@ -9,7 +9,11 @@
     "elysia": "latest"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.202",
     "bun-types": "latest"
   },
-  "module": "src/index.js"
+  "module": "src/index.js",
+  "optionalDependencies": {
+    "lodash": "^4.17.21"
+  }
 }
