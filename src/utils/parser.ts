@@ -1,16 +1,9 @@
+import { option } from "../app/types/dataTypes";
+
 export const parseConfigurationOptions = async (content: Response) => {
   const rewriter = new HTMLRewriter();
 
-  const data: {
-    title: string | null;
-    desc: string | null;
-    note: string | null;
-    type: string | null;
-    default: string | null;
-    example: string | null;
-    declared_by: string | null;
-    declared_by_link: string | null;
-  }[] = [];
+  const data: option[] = [];
 
   let dataField: string | null = null;
   let hasNote = true;
