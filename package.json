@@ -1,18 +1,29 @@
 {
-  "name": "app",
-  "version": "1.0.50",
+  "name": "home-manager-options-api",
+  "version": "0.0.1",
+  "main": "dist/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "tsc && bun run --watch src/index.ts",
+    "lint": "eslint . --ext .ts"
   },
   "dependencies": {
     "elysia": "latest"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.202",
-    "bun-types": "latest"
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "bun-types": "latest",
+    "eslint": "^8.56.0",
+    "eslint-config-standard-with-typescript": "^43.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.7.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
   },
-  "module": "src/index.js",
+  "module": "dist/index.js",
   "optionalDependencies": {
     "lodash": "^4.17.21"
   }
