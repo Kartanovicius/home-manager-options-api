@@ -22,10 +22,13 @@ const searchByTitle = (title: string, query: Record<string, string | null>): opt
     items: query.items ?? defaultQuery.items,
   };
 
-  let result = options.filter((option) => typeof option.title === "string" && option.title.includes(title));
+  const validatedPage = Math.max(1, parseInt(queryValues.page));
+  const validatedItems = Math.max(1, parseInt(queryValues.items));
 
-  const start = Number(queryValues.page) * Number(queryValues.items);
-  const end = start + Number(queryValues.items);
+  let result = options.filter((option) => typeof option.title === "string" && option.title.toLowerCase().includes(title.toLowerCase()));
+
+  const start = validatedPage === 1 ? 0 : validatedPage * validatedItems;
+  const end = start + validatedItems;
 
   result = result.slice(start, end);
 
