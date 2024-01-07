@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc && bun run --watch src/index.ts",
     "lint": "eslint . --ext .ts",
-    "build": "bun-vercel ./src/main.ts"
+    "build": "bun-vercel ./src/index.ts"
   },
   "dependencies": {
     "elysia": "latest"
