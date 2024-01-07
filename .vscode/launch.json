@@ -1,0 +1,10 @@
+{
+  // Use IntelliSense to learn about possible Node.js debug attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    // https://github.com/microsoft/vscode-recipes/tree/master/debugging-jest-tests
+    // https://jestjs.io/docs/en/troubleshooting#debugging-in-vs-code
+  ]
+}
