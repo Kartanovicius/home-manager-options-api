@@ -43,4 +43,4 @@ package-lock.json
 
 # dist
 src/dist
-dist
+# dist
