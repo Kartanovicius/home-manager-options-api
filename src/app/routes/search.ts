@@ -7,17 +7,13 @@ import {
 
 export const search = new Elysia().group('search', app =>
   app
-    .get('/', () => returnAllOptions(), {
-      headers: t.Object({
-        'Content-Type': t.String(),
-      }),
-    })
+    .get('/', () => returnAllOptions())
     .get(
       '/:title',
       ({ query, params: { title } }) => searchByTitle(title, query),
       {
-        headers: t.Object({
-          'Content-Type': t.String(),
+        params: t.Object({
+          title: t.String(),
         }),
       },
     ),
