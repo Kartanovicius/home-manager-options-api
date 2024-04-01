@@ -5,8 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc && bun run --watch src/index.ts",
-    "lint": "eslint . --ext .ts",
-    "build": "bun-vercel ./src/index.ts"
+    "lint": "eslint . --ext .ts"
   },
   "dependencies": {
     "elysia": "latest"
@@ -22,8 +21,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "jest": "^29.7.0",
     "prettier": "^3.1.1",
-    "typescript": "^5.3.3",
-    "bun-vercel": "^1.0.0-alpha.4"
+    "typescript": "^5.3.3"
   },
   "module": "dist/index.js",
   "optionalDependencies": {
