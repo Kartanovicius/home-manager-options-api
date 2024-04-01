@@ -4,7 +4,7 @@ import _ from 'lodash'
 import { search } from './app/routes/search'
 import { initDb } from './utils/initDb'
 
-new Elysia()
+export default new Elysia()
   .onStart(async app => {
     console.log(
       `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,

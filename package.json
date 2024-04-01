@@ -1,12 +1,12 @@
 {
   "name": "home-manager-options-api",
   "version": "0.0.1",
-  "main": "dist/main.js",
+  "main": "src/main.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc && bun run --watch src/main.ts",
     "lint": "eslint . --ext .ts",
-    "build": "bun build --target=bun src/main.ts --outdir ./dist"
+    "build": "bun-vercel ./src/main.ts"
   },
   "module": "dist/main.js",
   "dependencies": {
@@ -23,7 +23,8 @@
     "eslint-plugin-promise": "^6.1.1",
     "jest": "^29.7.0",
     "prettier": "^3.1.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "bun-vercel": "^1.0.0-alpha.5"
   },
   "optionalDependencies": {
     "lodash": "^4.17.21"
