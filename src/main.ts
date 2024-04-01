@@ -2,7 +2,7 @@ import { Elysia } from 'elysia'
 import { parseConfigurationOptions } from './utils/parser'
 import _ from 'lodash'
 import { search } from './app/routes/search'
-import { insertOptionsToDB } from './utils/insertOptionsToDB'
+import { initDb } from './utils/initDb'
 
 new Elysia()
   .onStart(async app => {
@@ -11,7 +11,7 @@ new Elysia()
     )
 
     const configurationOptions = await parseConfigurationOptions()
-    await insertOptionsToDB(configurationOptions)
+    await initDb(configurationOptions)
   })
   .group('/v1/api', app => app.use(search))
   .listen(3000)

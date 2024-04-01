@@ -2,7 +2,7 @@ import _ from 'lodash'
 // import { configurationOptions } from '../..'
 import { Option } from '../types/dataTypes'
 import { Database } from 'bun:sqlite'
-import { optionsDb } from '../../utils/insertOptionsToDB'
+import { optionsDb } from '../../utils/initDb'
 
 /**
  * Searches for options in the `configurationOptions` array from DB that have a `title` property matching the given `Title`.

@@ -3,7 +3,7 @@ import { Option } from '../app/types/dataTypes'
 
 export let optionsDb: Buffer
 
-export const insertOptionsToDB = async (options: Option[]) => {
+export const initDb = async (options: Option[]) => {
   // Open SQLite database
   const db = Database.open(':memory:', { create: true })
 
