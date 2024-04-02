@@ -6,10 +6,10 @@ import { optionsDb } from '../../utils/initDb'
 
 /**
  * Searches for options in the `configurationOptions` array from DB that have a `title` property matching the given `Title`.
- * Allows for pagination by specifying the `page` and `items` parameters in the `query` object.
+ * Allows for pagination by specifying the `page` and `limit` parameters in the `query` object.
  * Returns a subset of the matching options based on the pagination parameters.
  * @param title - The title to search for in the options.
- * @param query - An object containing pagination parameters (`page` and `items`).
+ * @param query - An object containing pagination parameters (`page` and `limit`).
  * @returns {Option[]} An array of options that have a `title` property matching the given `title`, limited by the pagination parameters specified in the `query` object.
  */
 export const searchByTitle = async (
@@ -20,17 +20,17 @@ export const searchByTitle = async (
 
   const defaultQuery = {
     page: '1',
-    items: '5',
+    limit: '5',
   }
 
   const queryValues = {
     page: query.page ?? defaultQuery.page,
-    items: query.items ?? defaultQuery.items,
+    limit: query.limit ?? defaultQuery.limit,
   }
 
   const validatedPage = Math.max(1, parseInt(queryValues.page))
-  const validatedItems = Math.max(1, parseInt(queryValues.items))
-  const offset = (validatedPage - 1) * validatedItems
+  const validatedLimit = Math.max(1, parseInt(queryValues.limit))
+  const offset = (validatedPage - 1) * validatedLimit
 
   const sqlQuery = `
     SELECT *
@@ -41,7 +41,7 @@ export const searchByTitle = async (
 
   const options = db
     .prepare(sqlQuery)
-    .all(title.toLowerCase(), validatedItems, offset)
+    .all(title.toLowerCase(), validatedLimit, offset)
 
   db.close()
 
